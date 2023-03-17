@@ -1,28 +1,30 @@
-# Comentarios en GraphQL se hacen con el símbolo de numeral (#).
-
-# Este typo "Book" describe los campos que se pueden consultar en un libro.
-type Book {
+type Persona {
   """
-  El signo de exclamación después del tipo significa que el campo no puede ser nulo.
+  El id de la persona
   """
-  id: ID!
+  id: ID
   """
-  El titulo del libro.
+  El nombre de la persona
+  @example "Juan"
   """
-  title: String
+  nombre: String
   """
-  El autor del libro.
+  El apellido de la persona
+  @example "Perez Gómez"
   """
-  author: String
+  apellido: String
+  """
+  El email de la persona
+  @example "example@gmail.com"
+  """
+  email: String
+  """
+  El teléfono de la persona
+  @example "555896448"
+  """
+  telefono: String
 }
 
-# The "Query" type is special: it lists all of the available queries that
-# clients can execute, along with the return type for each. In this
-# case, the "books" query returns an array of zero or more Books (defined above).
-
-# El tipo "query" es especial: enumera todas las consultas disponibles que
-# los clientes pueden ejecutar, junto con el tipo de retorno para cada uno. En este
-# caso, la consulta "books" devuelve un array de cero o más libros (definidos anteriormente).
 type Query {
-  books: [Book]
+  personas: [Persona]
 }
