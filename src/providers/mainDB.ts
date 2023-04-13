@@ -11,6 +11,7 @@ export class mainDB {
         const cfg = localConfigs().db;
         this.sequelize = new Sequelize(cfg.database, cfg.user, cfg.password, {
             host: cfg.host,
+            port: cfg.port,
             dialect: "mysql",
             logging(sql) {
                 logger.debug(`SQL: ${sql}`);
