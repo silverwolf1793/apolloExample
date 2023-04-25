@@ -1,7 +1,9 @@
-import { personas } from "./personas";
+import { personaEdgy } from "./edgy";
+import { persona } from "./persona";
 
 export const resolvers = {
     Query: {
-        personas,
+        persona,
+        personaEdgy,
     },
 };
