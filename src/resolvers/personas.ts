@@ -1,34 +1,25 @@
 import { iPersona } from "types";
 import { iContext } from "../index";
-
-const alternateCase =  (s:string)  => {
-  var chars = s.toLowerCase().split("");
-  for (var i = 0; i < chars.length; i += 2) {
-    chars[i] = chars[i].toUpperCase();  
-  }
-  return chars.join("");
-};
+const prueba = (    s:string   )=>{
+  const personaedgy = s.split('').map((letra, index) => {
+    return index % 2 === 0 ? letra.toUpperCase() : letra.toLowerCase();
+  }).join('');
+  return personaedgy;
+}
 
 export const personas = async (parent: any, args: any, { db }: iContext, info: any) => {
-  const personas: iPersona[] = await db.sequelize.models.persona.findAll() as any;
-
-  const personaEdgy = personas.map((persona:iPersona)=>{
-    persona.apellido = alternateCase(persona.apellido||"");
-    persona.nombre = alternateCase(persona.nombre||"");
-    persona.email = alternateCase(persona.email||"");
-    persona.telefono = persona.telefono;
-    persona.id = persona.id;
-  })
-
-  // let nuevoArray:any=[]
-  // for(let i=0;i<=personas.length; i++){
-  //    alternateCase(personas[i])
-  // }
-  // return nuevoArray
-
-  return personaEdgy;
+  const personas:iPersona[] = await db.sequelize.models.persona.findAll() as any;
+  const personaedgy = personas.map((persona: iPersona, index):iPersona => {
+    persona.apellido = prueba( persona.apellido || "" )
+    persona.nombre = prueba( persona.nombre || "" )
+    persona.email = prueba( persona.email || "" )
+    return {
+      id:persona.id,
+      nombre:persona.nombre,
+      apellido: persona.apellido,
+      email : persona.email,
+      telefono : persona.telefono,
+    }
+  });
+  return personaedgy;
 };
-
-// export const personas = async (parent: any, args: any, { db }: iContext, info: any) => {
-//  return await db.sequelize.models.persona.findAll();
-// };
