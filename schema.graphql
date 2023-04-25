@@ -27,4 +27,5 @@ type Persona {
 
 type Query {
   personas: [Persona]
+  personasEdgy: [Persona]
 }

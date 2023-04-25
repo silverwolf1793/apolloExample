@@ -1,2 +1,2 @@
-import { iPersona } from "./interfaces/persona";
-export { iPersona }
+import { iPersona } from './interfaces/persona';
+export { iPersona };
