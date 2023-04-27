@@ -29,3 +29,19 @@ type Query {
   persona: [Persona]
   personaEdgy: [Persona]
 }
+
+type Mutation {
+  crearPersona(input: PersonaInput!): Persona!
+  eliminarPersona(input: PersonaIDInput): Persona!
+}
+
+input PersonaIDInput {
+  id: ID!
+}
+
+input PersonaInput {
+  nombre: String
+  apellido: String
+  email: String
+  telefono: String
+}
