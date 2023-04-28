@@ -2,8 +2,8 @@ import { iContext } from "index";
 import { iPersona } from "types";
 
 interface iInput {
-  id: number;
   input: {
+	id: number;
     nombre?: string;
     apellido?: string;
     email?: string;
@@ -17,11 +17,11 @@ export const actualizarPersona = async (
 	{ db }: iContext,
 	info: any
 	) => {
-	const { id, input } = args;
-	const persona = await db.sequelize.models.persona.findByPk(id);
+	const { input } = args;
+	const persona = await db.sequelize.models.persona.findByPk(input.id);
 
 	if (!persona) {
-		throw new Error(`No se encontró una persona con el ID ${id}`);
+		throw new Error(`No se encontró una persona con el ID ${input.id}`);
 	}
 
 	await persona.update(input);
