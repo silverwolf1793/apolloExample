@@ -33,6 +33,7 @@ type Query {
 type Mutation {
   crearPersona(input: PersonaInput!): Persona!
   eliminarPersona(input: PersonaIDInput): Persona!
+  actualizarPersona(input: PersonaInput): Persona!
 }
 
 input PersonaIDInput {
