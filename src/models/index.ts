@@ -3,15 +3,15 @@ import { mainDB } from "../providers/mainDB";
 import Persona from "./persona";
 
 export interface iModelFunction {
-    (sequelize: mainDB): ModelCtor<Model<any, any>>;
+  (sequelize: mainDB): ModelCtor<Model<any, any>>;
 }
 
 interface iModels {
-    [key: string]: iModelFunction;
+  [key: string]: iModelFunction;
 }
 
 const Models: iModels = {
-    Persona,
-}
+  Persona,
+};
 
 export default Models;

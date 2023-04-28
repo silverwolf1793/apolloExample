@@ -5,14 +5,14 @@ import { eliminarPersona } from "./eliminar";
 import { actualizarPersona } from "./actualizar";
 
 export const resolvers = {
-    Query: {
-        persona,
-        personaEdgy,
-    },
+  Query: {
+    persona,
+    personaEdgy,
+  },
 
-    Mutation: {
-        crearPersona,
-        eliminarPersona,
-        actualizarPersona
-    }
+  Mutation: {
+    crearPersona,
+    eliminarPersona,
+    actualizarPersona,
+  },
 };

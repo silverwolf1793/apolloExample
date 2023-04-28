@@ -7,8 +7,6 @@ import { getLogger } from "./utils/logger";
 
 const logger = getLogger();
 
-
-
 //  Obtenemos el schema de nuestro archivo .graphql
 const typeDefs = readFileSync("./schema.graphql").toString("utf-8");
 
@@ -21,7 +19,6 @@ export interface iContext {
 const server = new ApolloServer<iContext>({
   typeDefs,
   resolvers,
-
 });
 
 //  Iniciamos el servidor y lo ponemos a escuchar en el puerto 4000
