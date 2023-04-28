@@ -33,7 +33,7 @@ type Query {
 type Mutation {
   crearPersona(input: PersonaInput!): Persona!
   eliminarPersona(input: PersonaIDInput): Persona!
-  actualizarPersona(input: PersonaInputFull): Persona!
+  actualizarPersona(id: Int, input: PersonaInput): Persona!
 }
 
 input PersonaIDInput {
@@ -41,14 +41,6 @@ input PersonaIDInput {
 }
 
 input PersonaInput {
-  nombre: String
-  apellido: String
-  email: String
-  telefono: String
-}
-
-input PersonaInputFull {
-  id: ID!
   nombre: String
   apellido: String
   email: String
