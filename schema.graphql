@@ -1,3 +1,20 @@
+type Direccion {
+  """
+  El id de la dirección
+  """
+  id: ID
+  """
+  La calle de la dirección
+  @example "Calle 1"
+  """
+  calle: String
+  """
+  El código postal de la dirección
+  @example 28001
+  """
+  codigoPostal: Int
+}
+
 type Persona {
   """
   El id de la persona
@@ -23,6 +40,14 @@ type Persona {
   @example "555896448"
   """
   telefono: String
+  """
+  La dirección de la persona
+  """
+  direccion: Direccion
+  """
+  La fk de la dirección de la persona
+  """
+  direccionId: Int
 }
 
 type Query {

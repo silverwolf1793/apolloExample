@@ -8,7 +8,7 @@ export const personasEdgy = async (
   info: any
 ) => {
   const personas: iPersona[] =
-    (await db.sequelize.models.persona.findAll()) as any;
+    (await db.sequelize.models.Persona.findAll()) as any;
   const personasEdgy: iPersona[] = [];
   personas.forEach((persona: iPersona) => {
     personasEdgy.push({

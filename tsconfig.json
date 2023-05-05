@@ -12,7 +12,10 @@
     "strict": true,
     "noImplicitAny": true,
     "baseUrl": "./src",
-    "paths": {}
+    "paths": {},
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false
   },
   "include": ["src/**/*.ts", "tests/**/*.ts"],
   "exclude": ["./tests/", "./node_modules/", "./dist/"]

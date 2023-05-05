@@ -1,4 +1,4 @@
-import { Sequelize } from 'sequelize';
+import { Sequelize } from 'sequelize-typescript';
 import localConfigs from '../utils/globalConfig';
 import { getLogger } from '../utils/logger';
 import Models from '../models/index';
@@ -18,10 +18,7 @@ export class mainDB {
       }
     });
 
-    Object.keys(Models).forEach((modelName) => {
-      // esta linea llama a la funcion que retorna el modelo y le envía la instancia de este objeto
-      Models[modelName as any]?.(this);
-    });
+    this.sequelize.addModels(Object.values(Models));
   }
 
   async connect() {

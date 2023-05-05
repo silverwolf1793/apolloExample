@@ -1,3 +1,5 @@
+import { iDireccion } from './direccion';
+
 export interface iPersona {
   /**
    * El id de la persona
@@ -23,4 +25,14 @@ export interface iPersona {
    * @example "555896448"
    * */
   telefono?: string;
+  /**
+   * La dirección de la persona
+   * @example {
+   * id: 1,
+   * calle: "Calle 1",
+   * colonia: "Colonia 1",
+   * codigoPostal: 12345
+   * }
+   * */
+  direccion?: iDireccion;
 }
